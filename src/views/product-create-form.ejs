@@ -14,7 +14,8 @@
 			</div>
 		</div>
 		<div class="col-12">
-			<form action="/products/create" method="POST">
+			<!-- no olvidar el enctype, para usar multer -->
+			<form action="/products/create" method="POST" enctype="multipart/form-data">
 				<div class="row product-detail">
 					<div class="col-12 col-md-6">
 						<label for="name" class="form-label">Nombre del producto:</label>
@@ -35,6 +36,10 @@
 							<option value="in-sale">En oferta</option>
 							<option value="visited">Últimos agregados</option>
 						</select>
+					</div>
+					<div class="col-12 col-md-6">
+						<label for="image" class="form-label">Imagen</label>
+						<input type="file" name="image" class="form-input" accept="image/*">
 					</div>
 					<div class="col-12">
 						<label for="description" class="form-label">Descipción:</label>

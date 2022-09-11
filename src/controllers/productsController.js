@@ -53,6 +53,7 @@ const controller = {
 		let newProduct = {
 			...req.body,
 			id: lastId + 1,
+			image: req.file ? req.file.filename : "default-image.jpg"
 		}
 		
 		products.push(newProduct)/*agrego a db el newProduct*/
@@ -106,7 +107,7 @@ const controller = {
 		let products = readJSON();
 		const productsModify = products.filter(product => product.id !== +req.params.id)
 		writeJSON(productsModify);
-		return res.redirect('/');
+		return res.redirect('/products');
 	}
 };
 
